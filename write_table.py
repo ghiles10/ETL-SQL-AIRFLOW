@@ -1,6 +1,7 @@
 from utils import connection_object
 from extract import extract_tweet 
 from config import USER_NAME
+from table import user_info, tweet_info, activity_info
 
 def query(table_name, column_names):
     
@@ -29,7 +30,8 @@ def insert(conn, query, cursor, table_data, batch=20):
 
         count = count + 1
 
-    cursor.executemany(query, recs)
+
+    cursor.executemany(query, records)
     conn.commit()
 
 
@@ -45,17 +47,8 @@ def write(table_name, column_names, table_data) :
     conn.close()
     cursor.close()
 
-#########################################################################################################################
-column_names = ["text", "favorite_count"  ,"date_creation" , "retweet_count" ]
-
-table_name = 'TWEET_INFO'
-
-table_data = [] 
-
-for  a,b,c,d in zip ( extract_tweet()[USER_NAME]['TWEET_INFO']['text'] ,extract_tweet()[USER_NAME]['TWEET_INFO']['favorite_count'] ,
-                            extract_tweet()[USER_NAME]['TWEET_INFO']['created_at']  ,extract_tweet()[USER_NAME]['TWEET_INFO']['retweet_count'] ) : 
-
-    print((a,b,c,d))         
-
-
-
+if __name__ == '__main__' : 
+    
+    write(user_info())
+    write(tweet_info())
+    write(activity_info())

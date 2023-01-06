@@ -61,8 +61,6 @@ def extract_tweet(user_name = USER_NAME)  :
     infos[user_name]["USER_INFO"]['following_count'] = user.friends_count
     infos[user_name]["USER_INFO"]['created_at'] = user.created_at
     infos[user_name]["USER_INFO"]['description'] = user.description
-    infos[user_name]["USER_INFO"]['location'] = user.location
-
 
     infos[user_name]["USER_ACTIVITY"]['favoris_count'] =  user.favourites_count
     infos[user_name]["USER_ACTIVITY"]['retweet_count'] =  user.statuses_count

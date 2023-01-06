@@ -6,7 +6,7 @@ def create_tables() :
     cursor = conn.cursor()
 
     # create user info
-    cursor.execute('''CREATE TABLE USER_INFO (user_name VARCHAR(20), followers INT, following INT, date_creation DATE)''')
+    cursor.execute('''CREATE TABLE USER_INFO (followers INT, following INT, date_creation DATE, description VARCHAR)''')
 
     # create tweet info 
     cursor.execute('''CREATE TABLE TWEET_INFO (text VARCHAR, favorite_count INT, date_creation DATE, retweet_count INT)''')
