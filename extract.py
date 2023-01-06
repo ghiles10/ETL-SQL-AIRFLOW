@@ -1,7 +1,7 @@
 import tweepy
-from  config import USER_KEY
+from  config import USER_KEY, USER_NAME
 
-def extract_tweet(user_name = 'elonmusk')  : 
+def extract_tweet(user_name = USER_NAME)  : 
 
     """ allows you to retrieve all the data related to the user account and to store the data as a dictionary """
 

@@ -12,3 +12,6 @@ DB_DETAILS = {
             'db_host': '0.0.0.0',
             'db_pass': 'ghiles'
 } 
+
+
+USER_NAME = 'elonmusk' 

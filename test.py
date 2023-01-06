@@ -12,3 +12,6 @@ DB_DETAILS = {
             'db_host': 'retail_db',
             'db_pass': ''
 }  
+
+
+OK = 'ok'
