@@ -9,8 +9,7 @@ def tweet_info()  :
     table_name = 'TWEET_INFO'
     table_data = [] 
 
-    for  col1,col2,col3,col4 in zip (data['text'], data['favorite_count'] ,
-                               data['created_at'] , data['retweet_count'] ) : 
+    for  col1,col2,col3,col4 in zip (data['text'], data['favorite_count'] , data['created_at'] , data['retweet_count'] ) : 
 
         table_data.append((col1,col2,col3,col4))         
 
@@ -23,10 +22,9 @@ def user_info()  :
     column_names = ["followers", "following"  ,"date_creation" , "description" ]
     table_name = 'USER_INFO'
     table_data = [] 
-
-    for  col1,col2,col3,col4 in zip (data['followers_count'] ,data['following_count'] ,
-                               data['created_at']  ,data['description'] ) :
-
+    print('-------------------------------------------')
+    print(data['followers_count'] ,data['following_count'] , data['created_at']  , data['description'] )
+    for  col1, col2, col3, col4 in zip(data['followers_count'] ,data['following_count'] , data['created_at']  , data['description'] ) :
         table_data.append((col1,col2,col3,col4))         
 
     return table_name, column_names , table_data
