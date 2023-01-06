@@ -1,6 +1,6 @@
 import tweepy
 
-def extract_tweet(user = 'elonmusk')  : 
+def extract_tweet(user_name = 'elonmusk')  : 
 
     """ allows you to retrieve all the data related to the user account and to store the data as a dictionary """
 
@@ -17,8 +17,9 @@ def extract_tweet(user = 'elonmusk')  :
     api = tweepy.API(auth)
 
     # store info 
+
     infos = {
-        user: {
+        user_name: {
             "TWEET_INFO": {
                 "text": [] ,
                 "favorite_count":[] ,
@@ -26,10 +27,10 @@ def extract_tweet(user = 'elonmusk')  :
                 "created_at":[]
             },
             "USER_INFO": {
-                "followers_count":'' ,
+                "followers_count": '' ,
                 "following_count": '',
                 "created_at":'' ,
-                "description":'' , 
+                "description":'' ,
                 "location":''
             },
             "USER_ACTIVITY": {
@@ -40,34 +41,35 @@ def extract_tweet(user = 'elonmusk')  :
     }
 
     # get user tweets 
-    tweets = api.user_timeline(screen_name='@'+str(user), 
+    tweets = api.user_timeline(screen_name='@'+str(user_name), 
                             count=100,
                             include_rts = False,
                             tweet_mode = 'extended') 
 
     # retrieves tweets
     for tweet in tweets : 
-        infos[user]["TWEET_INFO"]['text'].append(tweet._json["full_text"])
-        infos[user]["TWEET_INFO"]['favorite_count'].append(tweet.favorite_count)
-        infos[user]["TWEET_INFO"]['retweet_count'].append(tweet.retweet_count)
-        infos[user]["TWEET_INFO"]['created_at'].append(tweet.created_at)
+        infos[user_name]["TWEET_INFO"]['text'].append(tweet._json["full_text"])
+        infos[user_name]["TWEET_INFO"]['favorite_count'].append(tweet.favorite_count)
+        infos[user_name]["TWEET_INFO"]['retweet_count'].append(tweet.retweet_count)
+        infos[user_name]["TWEET_INFO"]['created_at'].append(tweet.created_at)
   
     # Retrieving account information
-    user = api.get_user( screen_name = user)
+    user = api.get_user( screen_name = user_name)
     
-    infos[user]["USER_INFO"]['followers_count'].append( user.followers_count)
-    infos[user]["USER_INFO"]['following_count'].append( user.friends_count)
-    infos[user]["USER_INFO"]['created_at'].append(user.created_at)
-    infos[user]["USER_INFO"]['description'].append(user.description)
-    infos[user]["USER_INFO"]['location'].append(user.location)
+    infos[user_name]["USER_INFO"]['followers_count'] =  user.followers_count
+    infos[user_name]["USER_INFO"]['following_count'] = user.friends_count
+    infos[user_name]["USER_INFO"]['created_at'] = user.created_at
+    infos[user_name]["USER_INFO"]['description'] = user.description
+    infos[user_name]["USER_INFO"]['location'] = user.location
 
 
-    # Retrieving activity account information
-    user = api.get_user( screen_name = user)
+    infos[user_name]["USER_ACTIVITY"]['favoris_count'] =  user.favourites_count
+    infos[user_name]["USER_ACTIVITY"]['retweet_count'] =  user.statuses_count
     
-    infos[user]["USER_ACTIVITY"]['favoris_count'].append( user.followers_count)
-    infos[user]["USER_ACTIVITY"]['retweet_count'].append( user.friends_count)
-
     return infos     
 
+
+if __name__ == '__main__' : 
+    print('extracting')
+    extract_tweet() 
 
