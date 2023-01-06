@@ -32,6 +32,7 @@ def user_info()  :
     return table_name, column_names , table_data
 
 def activity_info()  : 
+    
     data = extract_tweet()[USER_NAME]['USER_ACTIVITY']
 
     column_names = ["favorite_count", "retweet_count" ]

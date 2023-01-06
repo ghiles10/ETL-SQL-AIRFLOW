@@ -5,14 +5,14 @@ from table import user_info, tweet_info, activity_info
 
 def query(table_name, column_names):
     
-    column_names_string = ', '.join(column_names)
-    column_values = tuple(map(lambda column: column.replace(column, '%s'), column_names))
-    column_values_string = ', '.join(column_values)
-    query = (f'''
-        INSERT INTO {table_name} ({column_names_string}) VALUES ({column_values_string})
+    col_name = ', '.join(column_names)
+    col_val = tuple(map(lambda column: column.replace(column, '%s'), column_names))
+    column_val_string = ', '.join(col_val)
+    query_text = (f'''
+        INSERT INTO {table_name} ({col_name}) VALUES ({column_val_string})
     ''')
 
-    return query
+    return query_text
 
 def insert(conn, query, cursor, table_data, batch=20):
 
@@ -47,8 +47,3 @@ def write(table_name, column_names, table_data) :
     conn.close()
     cursor.close()
 
-if __name__ == '__main__' : 
-    
-    write(user_info())
-    write(tweet_info())
-    write(activity_info())

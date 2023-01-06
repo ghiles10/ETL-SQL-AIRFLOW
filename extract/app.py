@@ -5,7 +5,7 @@ from write_table import write
 # create tables
 create_tables()
 
-# write to tables
+# write data to tables
 for table in [tweet_info, user_info, activity_info]  :
     write(table()[0], table()[1],table()[2] )
 
