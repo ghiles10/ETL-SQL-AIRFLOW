@@ -1,13 +1,14 @@
 import tweepy
+from  config import USER_KEY
 
 def extract_tweet(user_name = 'elonmusk')  : 
 
     """ allows you to retrieve all the data related to the user account and to store the data as a dictionary """
 
-    access_key = "PiZ9HwCmjN9NUkdxGdabbHVSV" 
-    access_secret = "TkxotsQVGI6zErHNDeKkpKBttPtKCICxfQTfKxWHkR8b1yCYiC" 
-    consumer_key = "1572886741-D4cmA6kTxR3ctyHC54CP8S5TddMe8WNcPW59xR4"
-    consumer_secret = "lf03CiqS2ECm6vkgDPlmlSVHQ3BxoIU9zqgaoFbxg3wyX"
+    access_key = USER_KEY['access_key']
+    access_secret = USER_KEY['access_secret'] 
+    consumer_key = USER_KEY['consumer_key']
+    consumer_secret = USER_KEY['consumer_secret']
 
     # Twitter authentication
     auth = tweepy.OAuthHandler(access_key, access_secret)   
@@ -69,7 +70,10 @@ def extract_tweet(user_name = 'elonmusk')  :
     return infos     
 
 
-if __name__ == '__main__' : 
+if __name__ == '__main__' :
+
     print('extracting')
     extract_tweet() 
+    print('extracting done')
+
 

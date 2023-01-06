@@ -7,8 +7,8 @@ USER_KEY = {
 
 
 DB_DETAILS = {
-            'db_name': 'mysql',
-            'db_user': '139.99.209.131',
-            'db_host': 'retail_db',
-            'db_pass': ''
-}  
+            'db_name': 'mydatabase',
+            'db_user': 'ghiles',
+            'db_host': '0.0.0.0',
+            'db_pass': 'ghiles'
+} 
