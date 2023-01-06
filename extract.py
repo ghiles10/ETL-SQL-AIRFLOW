@@ -15,12 +15,24 @@ auth.set_access_token(consumer_key, consumer_secret)
 
 ## Creating an API object 
 api = tweepy.API(auth)
+
+# get  user tweets 
 tweets = api.user_timeline(screen_name='@elonmusk', 
-                        # 200 is the maximum allowed count
-                        count=200,
+                        count=100,
                         include_rts = False,
                         # Necessary to keep full_text 
                         # otherwise only the first 140 words are extracted
                         tweet_mode = 'extended'
                         )
-print(type(tweets))
+
+for tweet in tweets : 
+    text = tweet._json["full_text"]
+
+    refined_tweet = {"user": tweet.user.screen_name,
+                        'text' : text,
+                        'favorite_count' : tweet.favorite_count,
+                        'retweet_count' : tweet.retweet_count,
+                        'created_at' : tweet.created_at}
+    print(refined_tweet)
+
+
