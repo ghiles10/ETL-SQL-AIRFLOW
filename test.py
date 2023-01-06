@@ -19,7 +19,7 @@ OK = 'ok'
 from utils import connection_object
 conn = connection_object() 
 cur = conn.cursor()
-# Get a list of all tables in the database
+
 cur.execute("""
     SELECT table_name
     FROM information_schema.tables
@@ -30,4 +30,8 @@ cur.execute("""
 tables = cur.fetchall()
 # Iterate through the list of tables and drop each one
 for table in tables:
-        print(table)
+    cur.execute(f"DROP TABLE {table[0]}")
+    print(table)
+    
+conn.commit()
+conn.close()
