@@ -1,3 +1,5 @@
+import sys
+sys.path.append(r"./conf")
 import psycopg2
 from config import DB_DETAILS
 
