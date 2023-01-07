@@ -1,24 +1,35 @@
-import pandas as pd 
 import psycopg2
 import csv
-
 from utils import connection_object
+import os
+import datetime
 
-conn = connection_object()
+def load_data_to_csv():
 
-cur = conn.cursor()
+    date = str(datetime.datetime.now().date())
+    conn = connection_object()
+    cur = conn.cursor()
 
-#requête pour récupérer les données à partir de la table
-cur.execute("SELECT * FROM TWEET_INFO")
+    for table in ['TWEET_INFO', 'USER_INFO', 'USER_ACTIVITY']:
 
-# Récupérez les en-têtes de colonne de la table
-headers = [desc[0] for desc in cur.description]
+        #retrieve data from database
+        cur.execute(f"SELECT * FROM {table}")
 
-# Utilisez la bibliothèque csv pour écrire les données dans un fichier CSV
-with open('data/file.csv', 'w') as file:
-    writer = csv.writer(file)
-    writer.writerow(headers)
-    writer.writerows(cur)
+        # retrieve the names of the columns
+        headers = [desc[0] for desc in cur.description]
 
-# Fermez la connexion à la base de données
-conn.close()
+        # create a folder to store the data
+        if not os.path.exists(r'./data'):
+            os.makedirs(r'./data')
+
+        # Use the csv library to write the data to a csv file
+        with open(f'data/{table}_{date}.csv', 'w') as file:
+            writer = csv.writer(file)
+            writer.writerow(headers)
+            writer.writerows(cur)
+
+        # close the communication with the PostgreSQL
+    conn.close()
+
+if __name__ == '__main__':
+    load_data_to_csv()
