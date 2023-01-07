@@ -10,4 +10,3 @@ for table in [tweet_info, user_info, activity_info]  :
     write(table()[0], table()[1],table()[2] )
 
 
-
