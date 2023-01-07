@@ -1,5 +1,7 @@
 from dotenv import load_dotenv
-import os 
+import os
+load_dotenv(r'./.env')
+
 USER_KEY = { 
         "access_key" : os.getenv("access_key")  ,
         "access_secret" : os.getenv("access_secret"),
