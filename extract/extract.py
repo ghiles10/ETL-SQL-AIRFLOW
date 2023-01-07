@@ -32,7 +32,6 @@ def extract_tweet(user_name = USER_NAME)  :
                 "following_count": '',
                 "created_at":'' ,
                 "description":'' ,
-                "location":''
             },
             "USER_ACTIVITY": {
                 "favoris_count":'' ,

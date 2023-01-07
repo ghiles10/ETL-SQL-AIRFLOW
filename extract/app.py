@@ -1,5 +1,5 @@
 from create_table import create_tables 
-from table import tweet_info, user_info, activity_info
+from table import user_info, tweet_info, activity_info
 from write_table import write
 
 # create tables

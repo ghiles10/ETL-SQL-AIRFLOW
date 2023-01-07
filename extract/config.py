@@ -13,5 +13,4 @@ DB_DETAILS = {
             'db_pass': 'ghiles'
 } 
 
-
 USER_NAME = 'elonmusk' 

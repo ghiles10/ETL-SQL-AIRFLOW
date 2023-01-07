@@ -47,3 +47,8 @@ def write(table_name, column_names, table_data) :
     conn.close()
     cursor.close()
 
+if __name__ == '__main__' : 
+
+    write(tweet_info()[0], tweet_info()[1],tweet_info()[2] )
+    write(user_info()[0], user_info()[1],user_info()[2] )
+    write(activity_info()[0], activity_info()[1],activity_info()[2] )
