@@ -1,6 +1,3 @@
-
-
-
 from utils import connection_object
 conn = connection_object() 
 cur = conn.cursor()

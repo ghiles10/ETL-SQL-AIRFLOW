@@ -1,9 +1,5 @@
 from dotenv import load_dotenv
 import os 
-
-# Chargement du fichier .env situé dans le même dossier que le programme
-load_dotenv("./.env")
-
 USER_KEY = { 
         "access_key" : os.getenv("access_key")  ,
         "access_secret" : os.getenv("access_secret"),
