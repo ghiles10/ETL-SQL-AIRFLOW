@@ -1,3 +1,4 @@
 tweepy
 psycopg2
 python-dotenv
+pandas
