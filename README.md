@@ -4,7 +4,16 @@ This is a simple ETL using Airflow. first, I fetch data from the twitter api. th
 
 ## Prerequisites
 
-1. Create a .env file : 
+1. Setup PostgreSQL
+```
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+
+# Create a new user 
+sudo -u postgres createuser --login --pwprompt user_name
+sudo -u postgres createdb --owner=user_name database_name
+```
+2. Create a .env file : 
 
 ```
 # connecting to api
@@ -16,4 +25,20 @@ consumer_secret=''
 db_name=database
 db_user=user
 db_pass=password
+```
+
+3. Set Airflow Home Directory (local run) : 
+ ```
+ export AIRFLOW_HOME=$pwd
+ ```
+ 
+4. Set VirtualEnv : 
+ ``` 
+python3 -m venv etl
+source etl/bin/activate
+``` 
+
+5. Install Dependency : 
+```
+pip install -r requirements.txt
 ```
