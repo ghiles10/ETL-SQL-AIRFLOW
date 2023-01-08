@@ -30,7 +30,7 @@ DB_PASS=password
 3. Set Airflow Home Directory (local run) : 
  ```
  export AIRFLOW_HOME=$pwd
- cp etl_airflow.py $AIRFLOW_HOME/dags
+ cp DAG.py $AIRFLOW_HOME/dags
  ```
  
 4. Set VirtualEnv : 
