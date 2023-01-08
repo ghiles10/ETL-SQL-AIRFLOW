@@ -7,10 +7,12 @@ This is a simple ETL using Airflow. first, I fetch data from the twitter api. th
 1. Create a .env file : 
 
 ```
+# connecting to api
 access_key=''
 access_secret='' 
 consumer_key=''
 consumer_secret=''
+# postgres 
 db_name=database
 db_user=user
 db_pass=password
