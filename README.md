@@ -26,20 +26,23 @@ DB_NAME=database
 DB_USER=user
 DB_PASS=password
 ```
-
-3. Set Airflow Home Directory (local run) : 
- ```
- export AIRFLOW_HOME=$pwd
- cp DAG.py $AIRFLOW_HOME/dags
- ```
- 
-4. Set VirtualEnv : 
+3. Set VirtualEnv : 
  ``` 
 python3 -m venv etl
 source etl/bin/activate
 ``` 
 
-5. Install Dependency : 
+4. Install Dependency : 
 ```
 pip install -r requirements.txt
 ```
+
+5. Set Airflow Home Directory (local run) : 
+ ```
+ export AIRFLOW_HOME=$pwd
+ cp DAG.py $AIRFLOW_HOME/dags
+ ```
+ 
+
+
+
