@@ -24,11 +24,7 @@ CONSUMER_SECRET=''
 # postgres 
 DB_NAME=database
 DB_USER=user
-<<<<<<< HEAD
-DB_PASS=passwor
-=======
 DB_PASS=password
->>>>>>> 4577d8bf14a709aa10de34e9f96d889b1ec6d7ee
 ```
 
 3. Set Airflow Home Directory (local run) : 
