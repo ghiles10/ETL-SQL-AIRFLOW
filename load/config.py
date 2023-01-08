@@ -3,18 +3,18 @@ import os
 load_dotenv(r'./.env')
 
 USER_KEY = { 
-        "access_key" : os.getenv("access_key")  ,
-        "access_secret" : os.getenv("access_secret"),
-        "consumer_key" : os.getenv("consumer_key"),
-        "consumer_secret" : os.getenv("consumer_secret")
+        "access_key" : os.getenv("ACCESS_KEY")  ,
+        "access_secret" : os.getenv("ACCESS_SECRET"),
+        "consumer_key" : os.getenv("CONSUMER_KEY"),
+        "consumer_secret" : os.getenv("CONSUMER_SECRET")
 } 
 
 
 DB_DETAILS = {
-            'db_name': os.getenv("db_name"),
-            'db_user': os.getenv("db_user"),
+            'db_name': os.getenv("DB_NAME"),
+            'db_user': os.getenv("DB_USER"),
             'db_host': '0.0.0.0',
-            'db_pass': os.getenv("db_pass")
+            'db_pass': os.getenv("DB_PASS")
 } 
 
 USER_NAME = 'elonmusk' 
