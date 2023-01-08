@@ -1,6 +1,6 @@
 # SQL-AIRFLOW
 
-This is a simple ETL using Airflow. first, I fetch data from the twitter api. then create a databse on postgres that stores these data by creating 3 tables. I validate the data (transform). Finally, I convert the tables into csv files with the specific dates at the time of the conversion. 
+This is a simple ETL using Airflow. first, I fetch data from the twitter api. then create a databse on postgres that stores these data by creating 3 tables and validate the data (transform). Finally, I convert the tables into csv files with the specific dates at the time of the conversion. 
 
 ## Prerequisites
 
@@ -24,7 +24,11 @@ CONSUMER_SECRET=''
 # postgres 
 DB_NAME=database
 DB_USER=user
+<<<<<<< HEAD
 DB_PASS=passwor
+=======
+DB_PASS=password
+>>>>>>> 4577d8bf14a709aa10de34e9f96d889b1ec6d7ee
 ```
 
 3. Set Airflow Home Directory (local run) : 
