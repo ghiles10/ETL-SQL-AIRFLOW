@@ -3,7 +3,7 @@ from create_table import create_tables
 from table import user_info, tweet_info, activity_info
 from write_table import write
 
-def main(): 
+def extract_and_transform(): 
     
     # create tables
     create_tables()
@@ -13,4 +13,4 @@ def main():
         write(table()[0], table()[1],table()[2] )
 
 if __name__ == "__main__":
-    main()
+    extract_and_transform()

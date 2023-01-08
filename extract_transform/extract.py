@@ -42,7 +42,7 @@ def extract_tweet(user_name = USER_NAME)  :
 
     # get user tweets 
     tweets = api.user_timeline(screen_name='@'+str(user_name), 
-                            count=100,
+                            count=50,
                             include_rts = False,
                             tweet_mode = 'extended') 
 
