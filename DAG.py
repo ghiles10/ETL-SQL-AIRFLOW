@@ -1,6 +1,3 @@
-import sys 
-sys.path.append('./extract_transform')
-sys.path.append('./load')
 from datetime import timedelta
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator

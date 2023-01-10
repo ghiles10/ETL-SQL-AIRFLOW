@@ -1,6 +1,6 @@
 import psycopg2
 import csv
-from utils import connection_object
+from extract_transform.utils import connection_object
 import os
 import datetime
 
